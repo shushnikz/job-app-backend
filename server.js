@@ -9,8 +9,9 @@ const db = require("./db.js")
 
 const jobsRoute = require('./routes/jobsRoute')
 const userRoute = require('./routes/userRoute')
+const adminRoute = require('./routes/adminRoute')
 
-app.get("/", (req, res)=>{
+app.get("/", (req, res) => {
     res.json("This My Find Job App")
 })
 
@@ -18,6 +19,7 @@ app.use(express.json())
 
 app.use("/api/jobs", jobsRoute)
 app.use("/api/users", userRoute)
+app.use("/api/admin", adminRoute)
 
 const port = process.env.PORT || 4000;
 
